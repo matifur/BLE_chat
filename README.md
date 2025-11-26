@@ -15,36 +15,23 @@ Ten README opisuje:
 ### 1.1. Klonowanie repozytorium
 
 ```bash
-git clone https://github.com/<twoja_nazwa_organizacji>/<twoje_repo>.git
-cd <twoje_repo>
+git clone https://github.com/matifur/BLE_chat.git
+cd BLE_chat
 ```
 
 Projekt jest standardowym projektem ESP-IDF – **nie trzeba niczego generować**.
 
-### 1.2. Ustawienie środowiska
-
-1. Zainstaluj ESP-IDF (min. v5.3) zgodnie z oficjalną dokumentacją.
-2. W terminalu **załaduj środowisko** (np. na Windows z PowerShell):
-
-   ```bash
-   C:\esp\esp-idf\export.ps1
-   ```
-
-   (Ścieżka zależy od tego, gdzie masz zainstalowane ESP-IDF.)
-
-3. Ustaw docelowy układ:
-
-   ```bash
-   idf.py set-target esp32c3
-   ```
-
-### 1.3. VS Code (opcjonalnie)
+### 1.2. VS Code
 
 Jeśli korzystasz z rozszerzenia **Espressif IDF** w VS Code:
 
 1. Wybierz **File → Open Folder…** i wskaż katalog z projektem.
-2. Z dolnego paska wybierz odpowiedni **IDF Environment** i **Target: esp32c3**.
-3. Potem możesz używać przycisków „Build”, „Flash”, „Monitor” bezpośrednio w VS Code.
+2. Z lewego paska wybierz odpowiedni **Target: esp32c3**.
+3. Wybierz select port to use na przykład **COM5**
+4. Wybierz select flash method **UART**
+5. Potem możesz używać przycisków „Build”, „Flash”, „Monitor” bezpośrednio w VS Code.
+
+W razie problemów napisz do mnie XD
 
 ---
 
@@ -52,7 +39,9 @@ Jeśli korzystasz z rozszerzenia **Espressif IDF** w VS Code:
 
 Projekt zakłada, że komunikacja z płytką odbywa się przez **USB Serial/JTAG** w ESP32-C3 (ten sam port, którego używa `idf.py flash`).
 
-W razie potrzeby możesz sprawdzić / ustawić to w `menuconfig`:
+Możesz ustawić to w `menuconfig`:
+
+Z poziomu terminala ESP (znowu lewy pasek)
 
 ```bash
 idf.py menuconfig
