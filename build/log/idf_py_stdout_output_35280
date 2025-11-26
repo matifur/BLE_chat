@@ -1,0 +1,1072 @@
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40382636
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1820
+load:0x403cc710,len:0xb38
+load:0x403ce710,len:0x2fb4
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.3.3 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Nov 26 2025 21:27:13[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.3[0m
+[0;32mI (25) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (25) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (25) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (25) boot: Enabling RNG early entropy source...[0m
+[0;32mI (25) boot: Partition Table:[0m
+[0;32mI (26) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (26) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (26) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (26) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (27) boot: End of partition table[0m
+[0;32mI (27) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0837ch ( 33660) map[0m
+[0;32mI (33) esp_image: segment 1: paddr=000183a4 vaddr=3fc8b200 size=0128ch (  4748) load[0m
+[0;32mI (34) esp_image: segment 2: paddr=00019638 vaddr=40380000 size=069e0h ( 27104) load[0m
+[0;32mI (39) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=137a4h ( 79780) map[0m
+[0;32mI (52) esp_image: segment 4: paddr=000337cc vaddr=403869e0 size=04650h ( 18000) load[0m
+[0;32mI (59) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (59) boot: Disabling RNG early entropy source...[0m
+[0;32mI (60) cpu_start: Unicore app[0m
+[0;32mI (68) cpu_start: Pro cpu start user code[0m
+[0;32mI (68) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (68) app_init: Application information:[0m
+[0;32mI (68) app_init: Project name:     BLE_chat[0m
+[0;32mI (69) app_init: App version:      c6f11a3-dirty[0m
+[0;32mI (69) app_init: Compile time:     Nov 26 2025 21:27:14[0m
+[0;32mI (69) app_init: ELF file SHA256:  a846e8dd1...[0m
+[0;32mI (69) app_init: ESP-IDF:          v5.3.3[0m
+[0;32mI (69) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (69) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (69) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (69) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (70) heap_init: At 3FC8D320 len 00032CE0 (203 KiB): RAM[0m
+[0;32mI (70) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (70) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (70) heap_init: At 50000000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (71) spi_flash: detected chip: generic[0m
+[0;32mI (71) spi_flash: flash io: dio[0m
+[0;33mW (71) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (72) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (72) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (73) main_task: Started on CPU0[0m
+[0;32mI (73) main_task: Calling app_main()[0m
+[0;32mI (73) main: Starting chat demo...[0m
+[0;32mI (73) chat_io: Chat IO initialized using console stdin/stdout[0m
+
+--- Simple chat echo demo ---
+Wpisz linie tekstu i nacisnij Enter.
+Kazda linia zostanie wyswietlona jako WIADOMOSC Z ZEWNATRZ.
+
+> [0;31mE (73) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (1073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (2073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (3073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (4073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (5073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (6073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (7073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (8073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (9073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (10073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (11073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (12073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (13073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (14073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (15073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (16073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (17073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (18073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (19073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (20073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (21073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (22073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: ne
+> [IN ][--------][REMOTE ]:  
+> [IN ][--------][REMOTE ]: w
+> [IN ][--------][REMOTE ]: i
+> [0;31mE (23073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: e
+> [0;31mE (24073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (25073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (26073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (27073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: l
+> [0;31mE (28073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (29073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: 
+> [0;31mE (30073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (31073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (32073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: n
+> [0;31mE (33073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: iw
+> [IN ][--------][REMOTE ]: i
+> [IN ][--------][REMOTE ]: e
+> [IN ][--------][REMOTE ]: m
+> [0;31mE (34073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (35073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (36073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (37073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (38073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (39073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (40073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (41073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (42073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (43073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (44073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (45073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (46073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (47073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (48073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (49073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (50073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (51073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (52073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (53073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (54073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (55073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (56073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (57073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (58073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (59073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (60073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (61073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (62073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (63073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (64073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (65073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (66073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (67073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (68073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (69073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (70073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (71073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (72073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (73073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (74073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (75073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (76073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (77073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (78073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (79073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (80073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (81073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (82073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (83073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (84073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (85073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (86073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (87073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (88073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (89073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (90073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (91073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (92073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: k
+> [0;31mE (93073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (94073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: k
+> [0;31mE (95073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: k
+> [0;31mE (96073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (97073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: k
+> [0;31mE (98073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: n
+> [IN ][--------][REMOTE ]: d
+> [0;31mE (99073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: f
+> [0;31mE (100073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (101073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (102073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (103073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (104073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (105073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (106073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (107073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (108073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (109073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (110073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (111073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (112073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (113073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (114073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (115073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (116073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (117073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (118073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (119073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (120073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (121073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (122073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (123073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (124073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (125073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (126073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [0;31mE (127073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (128073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (129073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (130073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (131073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (132073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (133073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (134073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (135073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (136073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (137073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (138073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (139073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (140073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (141073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (142073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (143073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (144073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (145073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (146073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (147073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (148073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (149073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (150073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (151073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (152073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (153073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (154073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (155073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (156073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (157073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (158073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (159073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (160073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: f
+> [0;31mE (161073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [0;31mE (162073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [0;31mE (163073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [0;31mE (164073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [0;31mE (165073) main: chat_io_read_line error: ESP_FAIL[0m
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: f
+> [IN ][--------][REMOTE ]: ff
+> [0;31mE (166073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (167073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (168073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (169073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (170073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (171073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (172073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (173073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (174073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (175073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (176073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (177073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (178073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (179073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (180073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (181073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (182073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (183073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (184073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (185073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (186073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (187073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (188073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (189073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (190073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (191073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (192073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (193073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (194073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (195073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (196073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (197073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (198073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (199073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (200073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (201073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (202073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (203073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (204073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (205073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (206073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (207073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (208073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (209073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (210073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (211073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (212073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (213073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (214073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (215073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (216073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (217073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (218073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (219073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (220073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (221073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (222073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (223073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (224073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (225073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (226073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (227073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (228073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (229073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (230073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (231073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (232073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (233073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (234073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (235073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (236073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (237073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (238073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (239073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (240073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (241073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (242073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (243073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (244073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (245073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (246073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (247073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (248073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (249073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (250073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (251073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (252073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (253073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (254073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (255073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (256073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (257073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (258073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (259073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (260073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (261073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (262073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (263073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (264073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (265073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (266073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (267073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (268073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (269073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (270073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (271073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (272073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (273073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (274073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (275073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (276073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (277073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (278073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (279073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (280073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (281073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (282073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (283073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (284073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (285073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (286073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (287073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (288073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (289073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (290073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (291073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (292073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (293073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (294073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (295073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (296073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (297073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (298073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (299073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (300073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (301073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (302073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (303073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (304073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (305073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (306073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (307073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (308073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (309073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (310073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (311073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (312073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (313073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (314073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (315073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (316073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (317073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (318073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (319073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (320073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (321073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (322073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (323073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (324073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (325073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (326073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (327073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (328073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (329073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (330073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (331073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (332073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (333073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (334073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (335073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (336073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (337073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (338073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (339073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (340073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (341073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (342073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (343073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (344073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (345073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (346073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (347073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (348073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (349073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (350073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (351073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (352073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (353073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (354073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (355073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (356073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (357073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (358073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (359073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (360073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (361073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (362073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (363073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (364073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (365073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (366073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (367073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (368073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (369073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (370073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (371073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (372073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (373073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (374073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (375073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (376073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (377073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (378073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (379073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (380073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (381073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (382073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (383073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (384073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (385073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (386073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (387073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (388073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (389073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (390073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (391073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (392073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (393073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (394073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (395073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (396073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (397073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (398073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (399073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (400073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (401073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (402073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (403073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (404073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (405073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (406073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (407073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (408073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (409073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (410073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (411073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (412073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (413073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (414073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (415073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (416073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (417073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (418073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (419073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (420073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (421073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (422073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (423073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (424073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (425073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (426073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (427073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (428073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (429073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (430073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (431073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (432073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (433073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (434073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (435073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (436073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (437073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (438073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (439073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (440073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (441073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (442073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (443073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (444073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (445073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (446073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (447073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (448073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (449073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (450073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (451073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (452073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (453073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (454073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (455073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (456073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (457073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (458073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (459073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (460073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (461073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (462073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (463073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (464073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (465073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (466073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (467073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (468073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (469073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (470073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (471073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (472073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (473073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (474073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (475073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (476073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (477073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (478073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (479073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (480073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (481073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (482073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (483073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (484073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (485073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (486073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (487073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (488073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (489073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (490073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (491073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (492073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (493073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (494073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (495073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (496073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (497073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (498073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (499073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (500073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (501073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (502073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (503073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (504073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (505073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (506073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (507073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (508073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (509073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (510073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (511073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (512073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (513073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (514073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (515073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (516073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (517073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (518073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (519073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (520073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (521073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (522073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (523073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (524073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (525073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (526073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (527073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (528073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (529073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (530073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (531073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (532073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (533073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (534073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (535073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (536073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (537073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (538073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (539073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (540073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (541073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (542073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (543073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (544073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (545073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (546073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (547073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (548073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (549073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (550073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (551073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (552073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (553073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (554073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (555073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (556073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (557073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (558073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (559073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (560073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (561073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (562073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (563073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (564073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (565073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (566073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (567073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (568073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (569073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (570073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (571073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (572073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (573073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (574073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (575073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (576073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (577073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (578073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (579073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (580073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (581073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (582073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (583073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (584073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (585073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (586073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (587073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (588073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (589073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (590073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (591073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (592073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (593073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (594073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (595073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (596073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (597073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (598073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (599073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (600073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (601073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (602073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (603073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (604073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (605073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (606073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (607073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (608073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (609073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (610073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (611073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (612073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (613073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (614073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (615073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (616073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (617073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (618073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (619073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (620073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (621073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (622073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (623073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (624073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (625073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (626073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (627073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (628073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (629073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (630073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (631073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (632073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (633073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (634073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (635073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (636073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (637073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (638073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (639073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (640073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (641073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (642073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (643073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (644073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (645073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (646073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (647073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (648073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (649073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (650073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (651073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (652073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (653073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (654073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (655073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (656073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (657073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (658073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (659073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (660073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (661073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (662073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (663073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (664073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (665073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (666073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (667073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (668073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (669073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (670073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (671073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (672073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (673073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (674073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (675073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (676073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (677073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (678073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (679073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (680073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (681073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (682073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (683073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (684073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (685073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (686073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (687073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (688073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (689073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (690073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (691073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (692073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (693073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (694073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (695073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (696073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (697073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (698073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (699073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (700073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (701073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (702073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (703073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (704073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (705073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (706073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (707073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (708073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (709073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (710073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (711073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (712073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (713073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (714073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (715073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (716073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (717073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (718073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (719073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (720073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (721073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (722073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (723073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (724073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (725073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (726073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (727073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (728073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (729073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (730073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (731073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (732073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (733073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (734073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (735073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (736073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (737073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (738073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (739073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (740073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (741073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (742073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (743073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (744073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (745073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (746073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (747073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (748073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (749073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (750073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (751073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (752073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (753073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (754073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (755073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (756073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (757073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (758073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (759073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (760073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (761073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (762073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (763073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (764073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (765073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (766073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (767073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (768073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (769073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (770073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (771073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (772073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (773073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (774073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (775073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (776073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (777073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (778073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (779073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (780073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (781073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (782073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (783073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (784073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (785073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (786073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (787073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (788073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (789073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (790073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (791073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (792073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (793073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (794073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (795073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (796073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (797073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (798073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (799073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (800073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (801073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (802073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (803073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (804073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (805073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (806073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (807073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (808073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (809073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (810073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (811073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (812073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (813073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (814073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (815073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (816073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (817073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (818073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (819073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (820073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (821073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (822073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (823073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (824073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (825073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (826073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (827073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (828073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (829073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (830073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (831073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (832073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (833073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (834073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (835073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (836073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (837073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (838073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (839073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (840073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (841073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (842073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (843073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (844073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (845073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (846073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (847073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (848073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (849073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (850073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (851073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (852073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (853073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (854073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (855073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (856073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (857073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (858073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (859073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (860073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (861073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (862073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (863073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (864073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (865073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (866073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (867073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (868073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (869073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (870073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (871073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (872073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (873073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (874073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (875073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (876073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (877073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (878073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (879073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (880073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (881073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (882073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (883073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (884073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (885073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (886073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (887073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (888073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (889073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (890073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (891073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (892073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (893073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (894073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (895073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (896073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (897073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (898073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (899073) main: chat_io_read_line error: ESP_FAIL[0m
+> [0;31mE (900073) main: chat_io_read_line error: ESP_FAI

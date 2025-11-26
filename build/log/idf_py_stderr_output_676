@@ -1,0 +1,9 @@
+CMake Error: Could not open file for write in copy operation C:/STUDIA/Semestr_2_II/SiSK/Projekt/BLE_chat/build/CMakeFiles/3.30.2/CMakeCXXCompiler.cmake.tmp
+CMake Error: : System Error: Permission denied
+CMake Error at C:/Users/matifur/.espressif/tools/cmake/3.30.2/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:86 (configure_file):
+  configure_file Problem configuring file
+Call Stack (most recent call first):
+  C:/Users/matifur/esp/v5.3.3/esp-idf/tools/cmake/project.cmake:571 (__project)
+  CMakeLists.txt:8 (project)
+
+
