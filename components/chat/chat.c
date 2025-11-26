@@ -43,7 +43,7 @@ esp_err_t chat_io_read_line(char *buf, size_t buf_len, TickType_t timeout)
     size_t idx = 0;
     TickType_t start = xTaskGetTickCount();
 
-    while (idx < buf_len - 1) {
+    while (1) {
         TickType_t remain;
 
         if (timeout == portMAX_DELAY) {
@@ -67,9 +67,9 @@ esp_err_t chat_io_read_line(char *buf, size_t buf_len, TickType_t timeout)
             return ESP_FAIL;
         }
         if (n == 0) {
-            // timeout tego wywołania
+            // timeout tego czytania
             if (timeout == portMAX_DELAY) {
-                continue; // czekamy dalej
+                continue;
             }
             if (idx == 0) {
                 return ESP_ERR_TIMEOUT;
@@ -78,23 +78,27 @@ esp_err_t chat_io_read_line(char *buf, size_t buf_len, TickType_t timeout)
             }
         }
 
-        // echo znaku – żebyś widział co wpisujesz
-        chat_io_write_raw(&ch, 1);
-
-        // CR lub LF kończy linię (różne terminale wysyłają różne rzeczy)
+        // ENTER = CR lub LF -> koniec linii
         if (ch == '\r' || ch == '\n') {
             break;
         }
 
-        buf[idx++] = (char)ch;
+        // Backspace / DEL -> usuń ostatni znak z bufora (BEZ ruszania ekranu)
+        if (ch == '\b' || ch == 0x7F) {
+            if (idx > 0) {
+                idx--;
+            }
+            continue;
+        }
+
+        // Zwykły znak – dopisz do bufora (jeśli jest miejsce)
+        if (idx < buf_len - 1) {
+            buf[idx++] = (char)ch;
+        }
+        // jak nie ma miejsca, po prostu ignorujemy nadmiar
     }
 
     buf[idx] = '\0';
-
-    // przejście do nowej linii w terminalu po Enterze
-    const char crlf[] = "\r\n";
-    chat_io_write_raw(crlf, sizeof(crlf) - 1);
-
     return ESP_OK;
 }
 
