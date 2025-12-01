@@ -1,14 +1,19 @@
 {
-  "C_Cpp.intelliSenseEngine": "default",
-  "idf.espIdfPathWin": "C:\\Users\\matifur\\esp\\v5.3.3\\esp-idf",
-  "idf.pythonInstallPath": "C:\\Users\\matifur\\.espressif\\tools\\idf-python\\3.11.2\\python.exe",
+  "idf.espIdfPathWin": "C:/Espressif/frameworks/esp-idf-v5.5.1-2/",
+  "idf.toolsPathWin": "C:\\Users\\Radek\\Espressif",
+  "idf.pythonInstallPath": "C:\\Users\\Radek\\Espressif\\tools\\idf-python\\3.11.2\\python.exe",
+  "idf.flashType": "JTAG",
+  "idf.portWin": "COM4",
   "idf.openOcdConfigs": [
     "board/esp32c3-builtin.cfg"
   ],
-  "idf.portWin": "COM5",
-  "idf.toolsPathWin": "C:\\Users\\matifur\\.espressif",
   "idf.customExtraVars": {
     "IDF_TARGET": "esp32c3"
   },
-  "idf.flashType": "UART"
+  "clangd.path": "C:\\Users\\Radek\\Espressif\\tools\\esp-clang\\esp-19.1.2_20250312\\esp-clang\\bin\\clangd.exe",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=C:\\Users\\Radek\\Espressif\\tools\\riscv32-esp-elf\\esp-14.2.0_20241119\\riscv32-esp-elf\\bin\\riscv32-esp-elf-gcc.exe",
+    "--compile-commands-dir=c:\\Users\\Radek\\Desktop\\SiskProject\\BLE_chat\\build"
+  ]
 }
