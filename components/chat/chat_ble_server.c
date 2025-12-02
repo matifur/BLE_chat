@@ -31,23 +31,41 @@ static esp_ble_adv_params_t s_adv_params = {
 };
 
 // Optional: advertise our 16-bit service UUID in "complete list"
+// static esp_ble_adv_data_t s_adv_data = {
+//     .set_scan_rsp        = false,
+//     .include_name        = true,
+//     .include_txpower     = true,
+//     .min_interval        = 0,
+//     .max_interval        = 0,
+//     .appearance          = 0,
+//     .manufacturer_len    = 0,
+//     .p_manufacturer_data = NULL,
+//     .service_data_len    = 0,
+//     .p_service_data      = NULL,
+//     .service_uuid_len    = 2,  // one 16-bit UUID
+//     .p_service_uuid      = NULL, // set later
+//     .flag                = (ESP_BLE_ADV_FLAG_GEN_DISC | ESP_BLE_ADV_FLAG_BREDR_NOT_SPT),
+// };
+
+// Optional: advertise with device name (no UUID here)
 static esp_ble_adv_data_t s_adv_data = {
     .set_scan_rsp        = false,
-    .include_name        = true,
-    .include_txpower     = true,
-    .min_interval        = 0,
-    .max_interval        = 0,
+    .include_name        = true,   // we will set name to "ESP32_CHAT"
+    .include_txpower     = false,  // keep it simple
+    .min_interval        = 0x20,
+    .max_interval        = 0x40,
     .appearance          = 0,
     .manufacturer_len    = 0,
     .p_manufacturer_data = NULL,
     .service_data_len    = 0,
     .p_service_data      = NULL,
-    .service_uuid_len    = 2,  // one 16-bit UUID
-    .p_service_uuid      = NULL, // set later
+    .service_uuid_len    = 0,      // <-- NO UUID in adv payload
+    .p_service_uuid      = NULL,   // <-- NULL pointer
     .flag                = (ESP_BLE_ADV_FLAG_GEN_DISC | ESP_BLE_ADV_FLAG_BREDR_NOT_SPT),
 };
 
-static uint8_t s_service_uuid_buf[2]; // holds 16-bit UUID in LE for adv
+
+//static uint8_t s_service_uuid_buf[2]; // holds 16-bit UUID in LE for adv
 
 // Forward declarations
 static void gap_server_cb(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *param);
@@ -173,9 +191,9 @@ static void gatts_server_cb(esp_gatts_cb_event_t event,
         esp_ble_gap_set_device_name(dev_name);
 
         // Prepare adv data with our 16-bit service UUID
-        s_service_uuid_buf[0] = (uint8_t)(CHAT_SERVICE_UUID & 0xFF);
-        s_service_uuid_buf[1] = (uint8_t)((CHAT_SERVICE_UUID >> 8) & 0xFF);
-        s_adv_data.p_service_uuid = s_service_uuid_buf;
+        // s_service_uuid_buf[0] = (uint8_t)(CHAT_SERVICE_UUID & 0xFF);
+        // s_service_uuid_buf[1] = (uint8_t)((CHAT_SERVICE_UUID >> 8) & 0xFF);
+        // s_adv_data.p_service_uuid = s_service_uuid_buf;
 
         esp_err_t err = esp_ble_gap_config_adv_data(&s_adv_data);
         if (err != ESP_OK) {

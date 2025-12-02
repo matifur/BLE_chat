@@ -37,33 +37,62 @@ static bool s_found_server = false;
 // Minimal advertising parser to detect CHAT_SERVICE_UUID
 // =============================================================
 
-static bool adv_contains_chat_uuid(const uint8_t *adv, uint8_t len)
+// static bool adv_contains_chat_uuid(const uint8_t *adv, uint8_t len)
+// {
+//     uint8_t index = 0;
+//     while (index < len) {
+//         uint8_t field_len = adv[index++];
+//         if (field_len == 0) break;
+
+//         uint8_t type = adv[index];
+//         if (type == ESP_BLE_AD_TYPE_16SRV_CMPL ||
+//             type == ESP_BLE_AD_TYPE_16SRV_PART) {
+
+//             const uint8_t *p = &adv[index + 1];
+//             uint8_t remain = field_len - 1;
+
+//             while (remain >= 2) {
+//                 uint16_t uuid = (uint16_t)p[0] | (uint16_t)(p[1] << 8);
+//                 if (uuid == CHAT_SERVICE_UUID) {
+//                     return true;
+//                 }
+//                 p += 2;
+//                 remain -= 2;
+//             }
+//         }
+//         index += field_len;
+//     }
+//     return false;
+// }
+
+// Look for complete local name "ESP32_CHAT" in advertisement
+static bool adv_contains_chat_name(const uint8_t *adv, uint8_t len)
 {
+    const char target_name[] = "ESP32_CHAT";
+    const uint8_t target_len = sizeof(target_name) - 1;
+
     uint8_t index = 0;
     while (index < len) {
         uint8_t field_len = adv[index++];
-        if (field_len == 0) break;
+        if (field_len == 0 || index + field_len > len) break;
 
         uint8_t type = adv[index];
-        if (type == ESP_BLE_AD_TYPE_16SRV_CMPL ||
-            type == ESP_BLE_AD_TYPE_16SRV_PART) {
 
-            const uint8_t *p = &adv[index + 1];
-            uint8_t remain = field_len - 1;
+        if (type == ESP_BLE_AD_TYPE_NAME_CMPL) {
+            const uint8_t *name = &adv[index + 1];
+            uint8_t name_len = field_len - 1;
 
-            while (remain >= 2) {
-                uint16_t uuid = (uint16_t)p[0] | (uint16_t)(p[1] << 8);
-                if (uuid == CHAT_SERVICE_UUID) {
-                    return true;
-                }
-                p += 2;
-                remain -= 2;
+            if (name_len == target_len &&
+                memcmp(name, target_name, target_len) == 0) {
+                return true;
             }
         }
+
         index += field_len;
     }
     return false;
 }
+
 
 // =============================================================
 // Temporary GAP callback used during scanning phase
@@ -76,7 +105,7 @@ static void gap_temp_scan_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_p
         const esp_ble_gap_cb_param_t *r = param;
         if (r->scan_rst.search_evt == ESP_GAP_SEARCH_INQ_RES_EVT) {
             // Check if this advertisement contains our service UUID
-            if (adv_contains_chat_uuid(r->scan_rst.ble_adv, r->scan_rst.adv_data_len)) {
+            if (adv_contains_chat_name(r->scan_rst.ble_adv, r->scan_rst.adv_data_len)) {
 
                 ESP_LOGI(CHAT_BLE_TAG, "Detected CHAT service advertisement -> will become CLIENT");
 

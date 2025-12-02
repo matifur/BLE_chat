@@ -3,7 +3,7 @@
 #include "freertos/task.h"
 #include "esp_log.h"
 #include "esp_err.h"
-
+#include "nvs_flash.h"
 #include "chat.h"
 #include "chat_ble.h"
 
@@ -13,6 +13,7 @@ void app_main(void)
 {
     ESP_LOGI(TAG, "Starting BLE Chat...");
 
+    ESP_ERROR_CHECK(nvs_flash_init());
     // Initialize UART console for chat I/O
     ESP_ERROR_CHECK(chat_io_init());
 

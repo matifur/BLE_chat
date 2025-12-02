@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "BLE_chat",
-    "project_version":    "8f1f507-dirty",
+    "project_version":    "55bbf4b-dirty",
     "project_path":       "C:/Users/Radek/Desktop/SiskProject/BLE_chat",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.5.1-2",
     "build_dir":          "C:/Users/Radek/Desktop/SiskProject/BLE_chat/build",
