@@ -5,6 +5,8 @@
 #include "esp_gatt_defs.h"
 #include "esp_gatt_common_api.h"
 #include "esp_bt_defs.h"
+#include "esp_random.h"
+
 
 // =============================================================
 //  Common BLE definitions for Chat App (Approach B)
@@ -21,7 +23,7 @@
 #define CHAT_BLE_MAX_PACKET_LEN  180
 
 // Initial scan timeout before deciding role (ms)
-#define CHAT_ROLE_SCAN_TIMEOUT_MS  600    // 0.6s recommended
+#define CHAT_ROLE_SCAN_TIMEOUT_MS  5000 // 5s    
 
 // BLE roles
 typedef enum {

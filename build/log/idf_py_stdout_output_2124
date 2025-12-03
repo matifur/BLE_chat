@@ -1,0 +1,82 @@
+Command: C:\Users\Radek\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.5.1-2/tools/idf_monitor.py -p COM4 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace C:\Users\Radek\Desktop\SiskProject\BLE_chat\build\BLE_chat.elf C:\Users\Radek\Desktop\SiskProject\BLE_chat\build\bootloader\bootloader.elf --force-color -m 'C:\Users\Radek\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:/Espressif/frameworks/esp-idf-v5.5.1-2/\tools\idf.py'
+[0;32mI (103) esp_image: segment 1: paddr=0002f4cc vaddr=3fc93800 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038770a
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  2 2025 20:14:37[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.3[0m
+[0;32mI (28) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (59) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (66) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (76) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=1f4a4h (128164) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0002f4cc vaddr=3fc93800 size=00b4ch (  2892) load[0m
+[0;32mI (104) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=8b964h (571748) map[0m
+[0;32mI (198) esp_image: segment 3: paddr=000bb98c vaddr=3fc9434c size=015e8h (  5608) load[0m
+[0;32mI (200) esp_image: segment 4: paddr=000bcf7c vaddr=40380000 size=136f4h ( 79604) load[0m
+[0;32mI (217) esp_image: segment 5: paddr=000d0678 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (223) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (223) boot: Disabling RNG early entropy source...[0m
+[0;32mI (234) cpu_start: Unicore app[0m
+[0;32mI (243) cpu_start: Pro cpu start user code[0m
+[0;32mI (243) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (243) app_init: Application information:[0m
+[0;32mI (243) app_init: Project name:     BLE_chat[0m
+[0;32mI (247) app_init: App version:      f57baa8-dirty[0m
+[0;32mI (251) app_init: Compile time:     Dec  2 2025 21:17:21[0m
+[0;32mI (256) app_init: ELF file SHA256:  11fafe029...[0m
+[0;32mI (261) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (265) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (268) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (272) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (276) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (283) heap_init: At 3FC99C80 len 00026380 (152 KiB): RAM[0m
+[0;32mI (288) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (294) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (300) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (306) spi_flash: detected chip: generic[0m
+[0;32mI (309) spi_flash: flash io: dio[0m
+[0;33mW (312) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (324) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (330) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (337) coexist: coex firmware version: b0bcc39[0m
+[0;32mI (341) coexist: coexist rom version 9387209[0m
+[0;32mI (345) main_task: Started on CPU0[0m
+[0;32mI (345) main_task: Calling app_main()[0m
+[0;32mI (345) main: Starting BLE Chat...[0m
+[0;32mI (355) chat_io: Chat IO initialized using USB Serial/JTAG driver[0m
+[0;32mI (355) BLE_INIT: BT controller compile version [2edb0b0][0m
+[0;32mI (365) BLE_INIT: Using main XTAL as clock source[0m
+[0;32mI (365) BLE_INIT: Feature Config, ADV:1, BLE_50:0, DTM:1, SCAN:1, CCA:0, SMP:1, CONNECT:1[0m
+[0;32mI (375) BLE_INIT: Bluetooth MAC: 9c:9e:6e:f7:2b:9e[0m
+[0;32mI (375) phy_init: phy_version 1201,bae5dd99,Mar  3 2025,15:36:21[0m
+[0;32mI (425) chat_ble: BLE controller + bluedroid initialized[0m
+[0;32mI (435) chat_ble: Scanning for CHAT service...[0m
+[0;32mI (5435) chat_ble: Role selected: SERVER[0m
+[1;31mE (5435) BT_BTM: BTM_BleScan scan not active[0m
+
+[0;33mW (5435) BT_APPL:  bta_dm_ble_scan stop scan failed, status=0x6[0m
+
+[0;32mI (5435) chat_ble_srv: Initializing CHAT BLE server...[0m
+[0;32mI (5435) chat_ble_srv: GATTS_REG_EVT, app_id=85[0m
+[0;32mI (5445) chat_ble_srv: Adv data set, starting advertising[0m
+[0;32mI (5445) chat_ble_srv: Service created, handle=40[0m
+[0;32mI (5455) chat_ble_srv: Advertising started[0m
+[0;32mI (5455) chat_ble_srv: RX characteristic added, handle=42[0m
+[0;32mI (5465) chat_ble_srv: TX characteristic added, handle=44[0m
+[0;32mI (5465) main: BLE initialized. Role = SERVER[0m
+> 

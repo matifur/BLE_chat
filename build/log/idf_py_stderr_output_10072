@@ -1,0 +1,13 @@
+Command: C:\Users\Radek\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.5.1-2/tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace C:\Users\Radek\Desktop\SiskProject\BLE_chat\build\BLE_chat.elf C:\Users\Radek\Desktop\SiskProject\BLE_chat\build\bootloader\bootloader.elf --force-color -m 'C:\Users\Radek\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:/Espressif/frameworks/esp-idf-v5.5.1-2/\tools\idf.py'
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM5 instead...[0m
+[0;33m--- esp-idf-monitor 1.8.0 on \\.\COM5 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x4038770a: [0;33mrv_utils_wait_for_intr[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.1-2/components/riscv/include/riscv/rv_utils.h[0m[0m:[1;31m79[0m
+[0m--- (inlined by) [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.1-2/components/esp_hw_support/cpu.c[0m[0m:[1;31m62[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.1-2/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.1-2/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.5.1-2/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[1;31m--- Error: ClearCommError failed (PermissionError(13, 'The device does not recognize the command.', None, 22))[0m
+[0;33m--- Waiting for the device to reconnect[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m[0m
+[0m
