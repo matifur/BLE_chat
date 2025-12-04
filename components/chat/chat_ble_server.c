@@ -190,11 +190,6 @@ static void gatts_server_cb(esp_gatts_cb_event_t event,
         const char dev_name[] = "ESP32_CHAT";
         esp_ble_gap_set_device_name(dev_name);
 
-        // Prepare adv data with our 16-bit service UUID
-        // s_service_uuid_buf[0] = (uint8_t)(CHAT_SERVICE_UUID & 0xFF);
-        // s_service_uuid_buf[1] = (uint8_t)((CHAT_SERVICE_UUID >> 8) & 0xFF);
-        // s_adv_data.p_service_uuid = s_service_uuid_buf;
-
         esp_err_t err = esp_ble_gap_config_adv_data(&s_adv_data);
         if (err != ESP_OK) {
             ESP_LOGE(TAG, "config_adv_data failed: %s", esp_err_to_name(err));
