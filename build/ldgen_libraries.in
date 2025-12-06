@@ -151,6 +151,10 @@ $<TARGET_FILE:idf::rt>
 $<TARGET_FILE:idf::spiffs>
 $<TARGET_FILE:idf::wifi_provisioning>
 $<TARGET_FILE:__idf_json>
+$<TARGET_FILE:idf::wifi>
+$<TARGET_FILE:idf::ntp>
 $<TARGET_FILE:idf::chat>
+$<TARGET_FILE:__idf_wifi>
+$<TARGET_FILE:__idf_ntp>
 $<TARGET_FILE:idf::main>
 $<TARGET_FILE:__idf_chat>

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Espressif/frameworks/esp-idf-v5.5.1-2/components/riscv
+# Install script for directory: C:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

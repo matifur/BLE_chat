@@ -1,0 +1,1606 @@
+Command: C:\Users\Radek\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Users\Radek\esp\v5.5.1\esp-idf\tools/idf_monitor.py -p COM5 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\BLE_chat.elf C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf --force-color -m 'C:\Users\Radek\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Users\Radek\esp\v5.5.1\esp-idf\tools\idf.py'
+[0;32mI (117) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 sizeMSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  [0m
+MHARTID : 0x00000000  
+
+Stack memory:
+3fcde180: 0x400481b0 0x0000006e 0x3c11d058 0x40393468 0x3fc9b954 0x3c11d058 0x3fc9c00c 0x3cESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x420fa3e2
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (25) boot: efuse block revision: v1.3[0m
+[0;32mI (28) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (44) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (53) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (66) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (76) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (117) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (119) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (287) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (308) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (335) cpu_start: Pro cpu start user code[0m
+[0;32mI (335) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (335) app_init: Application information:[0m
+[0;32mI (335) app_init: Project name:     BLE_chat[0m
+[0;32mI (339) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (353) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (386) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (392) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (398) spi_flash: detected chip: generic[0m
+[0;32mI (401) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (334) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (335) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (335) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (335) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (335) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (335) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (334) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (334) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (334) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (335) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (334) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (335) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (334) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (334) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (334) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (334) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (335) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  
+TP      : 0x00000000  T0      : 0x37363534  T1      : 0x7271706f  T2      : 0x33323130  
+S0/FP   : 0x0000006f  S1      : 0x00000001  A0      : 0x3fcde1bc  A1      : 0x3fc9b96d  
+A2      : 0x00000001  A3      : 0x00000029  A4      : 0x00000001  A5      : 0x3fca1000  
+A6      : 0x7a797877  A7      : 0x76757473  S2      : 0x00000009  S3      : 0x3fcde2e8  
+S4      : 0x3fc9b96c  S5      : 0x3c800000  S6      : 0x3c100000  S7      : 0xffff0000  
+S8      : 0x00040020  S9      : 0x00010020  S10     : 0x00000006  S11     : 0x3fcde3c4  
+T3      : 0x6e6d6c6b  T4      : 0x6a696867  T5      : 0x66656463  T6      : 0x62613938  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+add symbol table from file "C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf"
+warning: could not convert 'main' from the host encoding (CP1252) to UTF-32.
+This normally should not happen, please file a bug report.
+panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+483	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c:483
+#1  0x4038ab60 in esp_system_abort (details=details@entry=0x3fcde1bc "assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/esp_system_chip.c:87
+#2  0x40393468 in __assert_func (file=file@entry=0x3c100524 "", line=line@entry=118, func=<optimized out>, func@entry=0x3c11d058 <__func__.0> "", expr=expr@entry=0x3c1004f4 "") at C:/Users/Radek/esp/v5.5.1/esp-idf/components/newlib/src/assert.c:80
+#3  0x420009e6 in __esp_system_init_fn_init_flash () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup_funcs.c:118
+#4  0x4200124e in do_system_init_fn (stage_num=stage_num@entry=0) at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:132
+#5  0x4200129a in do_core_init () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:170
+#6  0x420012b4 in start_cpu0_default () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/startup.c:204
+#7  0x4038039c in call_start_cpu0 () at C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/cpu_start.c:935
+
+
+
+ELF file SHA256: e1ecf8121
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038ac88
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x15ac
+load:0x403cbf10,len:0xc34
+load:0x403ce710,len:0x2fd0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2025 21:40:40[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (24) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (35) boot.esp32c3: SPI Flash Size : 8MB[0m
+[0;32mI (39) boot: Enabling RNG early entropy source...[0m
+[0;32mI (43) boot: Partition Table:[0m
+[0;32mI (46) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (52) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (59) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (65) boot:  2 factory          factory app      00 00 00010000 00200000[0m
+[0;32mI (72) boot: End of partition table[0m
+[0;32mI (75) boot: Defaulting to factory image[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=2e40ch (189452) map[0m
+[0;32mI (116) esp_image: segment 1: paddr=0003e434 vaddr=3fc99600 size=01be4h (  7140) load[0m
+[0;32mI (118) esp_image: segment 2: paddr=00040020 vaddr=42000020 size=fbf30h (1031984) map[0m
+[0;32mI (285) esp_image: segment 3: paddr=0013bf58 vaddr=3fc9b1e4 size=01658h (  5720) load[0m
+[0;32mI (286) esp_image: segment 4: paddr=0013d5b8 vaddr=40380000 size=19464h (103524) load[0m
+[0;32mI (307) esp_image: segment 5: paddr=00156a24 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (316) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (316) boot: Disabling RNG early entropy source...[0m
+[0;32mI (326) cpu_start: Unicore app[0m
+[0;32mI (334) cpu_start: Pro cpu start user code[0m
+[0;32mI (334) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (334) app_init: Application information:[0m
+[0;32mI (334) app_init: Project name:     BLE_chat[0m
+[0;32mI (338) app_init: App version:      29ea991-dirty[0m
+[0;32mI (343) app_init: Compile time:     Dec  6 2025 21:48:07[0m
+[0;32mI (348) app_init: ELF file SHA256:  e1ecf8121...[0m
+[0;32mI (352) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (356) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (360) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (364) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (368) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (374) heap_init: At 3FCA4410 len 0001BBF0 (110 KiB): RAM[0m
+[0;32mI (379) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (385) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (391) heap_init: At 50000020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (397) spi_flash: detected chip: generic[0m
+[0;32mI (400) spi_flash: flash io: dio[0m
+[1;31mE (403) spi_flash: Detected size(4096k) smaller than the size in the binary image header(8192k). Probe failed.[0m
+
+assert failed: __esp_system_init_fn_init_flash startup_funcs.c:118 (flash_ret == ESP_OK)
+Core  0 register dump:
+MEPC    : 0x4038aba2  RA      : 0x4038ab60  SP      : 0x3fcde180  GP      : 0x3fc99e00  

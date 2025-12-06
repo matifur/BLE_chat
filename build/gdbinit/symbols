@@ -23,8 +23,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file C:/Users/Radek/Desktop/SiskProject/BLE_chat/build/bootloader/bootloader.elf
+    add-symbol-file C:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file C:/Users/Radek/Desktop/SiskProject/BLE_chat/build/BLE_chat.elf
+file C:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/build/BLE_chat.elf

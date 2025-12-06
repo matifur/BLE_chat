@@ -16,6 +16,8 @@ idf_component_register(
         nvs_flash
         esp_system
         esp_driver_usb_serial_jtag
+        wifi
+        ntp
 )
 
 # idf_component_register(

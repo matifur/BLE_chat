@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Radek/Desktop/SiskProject/BLE_chat/main
+# Install script for directory: C:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

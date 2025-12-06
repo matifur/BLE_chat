@@ -1,4 +1,4 @@
-# Install script for directory: C:/Espressif/frameworks/esp-idf-v5.5.1-2/components/mbedtls/mbedtls/3rdparty
+# Install script for directory: C:/Users/Radek/esp/v5.5.1/esp-idf/components/mbedtls/mbedtls/3rdparty
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,8 +39,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/Radek/Desktop/SiskProject/BLE_chat/build/esp-idf/mbedtls/mbedtls/3rdparty/everest/cmake_install.cmake")
-  include("C:/Users/Radek/Desktop/SiskProject/BLE_chat/build/esp-idf/mbedtls/mbedtls/3rdparty/p256-m/cmake_install.cmake")
+  include("C:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/build/esp-idf/mbedtls/mbedtls/3rdparty/everest/cmake_install.cmake")
+  include("C:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/build/esp-idf/mbedtls/mbedtls/3rdparty/p256-m/cmake_install.cmake")
 
 endif()
 

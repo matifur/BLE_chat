@@ -1,0 +1,378 @@
+Command: C:\Users\Radek\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe C:\Users\Radek\esp\v5.5.1\esp-idf\tools/idf_monitor.py -p COM4 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\BLE_chat.elf C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\bootloader\bootloader.elf --force-color -m 'C:\Users\Radek\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'C:\Users\Radek\esp\v5.5.1\esp-idf\tools\idf.py'
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM4 instead...[0m
+[0;33m--- esp-idf-monitor 1.8.0 on \\.\COM4 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x420fa3fc: [0;33muart_ll_get_txfifo_len[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/hal/esp32c3/include/hal/uart_ll.h[0m[0m:[1;31m417[0m
+[0m--- (inlined by) [0;33mpanic_print_char_uart[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m96[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x40048b92: [0;33msoftware_reset_cpu[0m[0m in [0;32mROM[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m--- To exit from IDF monitor please use "Ctrl+]". Alternatively, you can use Ctrl+T Ctrl+X to exit.[0m
+[0m--- 0x4038ac88: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/port/soc/esp32c3/system_internal.c[0m[0m:[1;31m115[0m
+[0m--- 0x403cbf10: [0;33mesp_bootloader_get_description[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c[0m[0m:[1;31m39[0m
+[0m--- 0x403ce710: [0;33mesp_flash_encryption_enabled[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader_support/src/flash_encrypt.c[0m[0m:[1;31m89[0m
+[0m--- 0x403cbf1a: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x4200a618: [0;33mapp_main[0m[0m at [0;32mC:/Users/Radek/Desktop/SiskProject/BLE_chat/BLE_chat/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x4038ab57: [0;33m_esp_error_check_failed[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0;33m--- Stack dump detected[0m
+[0m--- 0x4038aba2: [0;33mpanic_abort[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/panic.c[0m[0m:[1;31m483[0m
+[0m--- 0x4038ab60: [0;33mesp_vApplicationTickHook[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_system/freertos_hooks.c[0m[0m:[1;31m31[0m
+[0m--- 0x40380001: [0;33m_vector_table[0m[0m at [0;32mC:/Users/Radek/esp/v5.5.1/esp-idf/components/riscv/vectors_intc.S[0m[0m:[1;31m54[0m
+[0;33m--- To exit from IDF monitor please use "Ctrl+]". Alternatively, you can use Ctrl+T Ctrl+X to exit.[0m
+[0m
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "C:\Users\Radek\esp\v5.5.1\esp-idf\tools/idf_monitor.py", line 11, in <module>
+    sys.exit(subprocess.run([sys.executable, '-m', 'esp_idf_monitor'] + sys.argv[1:]).returncode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "subprocess.py", line 550, in run
+  File "subprocess.py", line 1199, in communicate
+  File "subprocess.py", line 1262, in wait
+  File "subprocess.py", line 1543, in _wait
+KeyboardInterrupt

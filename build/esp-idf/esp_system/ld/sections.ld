@@ -1,6 +1,6 @@
 /* Automatically generated file; DO NOT EDIT */
 /* Espressif IoT Development Framework Linker Script */
-/* Generated from: C:\Users\Radek\Desktop\SiskProject\BLE_chat\build\esp-idf\esp_system\ld\sections.ld.in */
+/* Generated from: C:\Users\Radek\Desktop\SiskProject\BLE_chat\BLE_chat\build\esp-idf\esp_system\ld\sections.ld.in */
 
 /*
 

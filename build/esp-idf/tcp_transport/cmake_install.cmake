@@ -1,4 +1,4 @@
-# Install script for directory: C:/Espressif/frameworks/esp-idf-v5.5.1-2/components/tcp_transport
+# Install script for directory: C:/Users/Radek/esp/v5.5.1/esp-idf/components/tcp_transport
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

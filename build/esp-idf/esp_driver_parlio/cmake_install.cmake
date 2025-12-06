@@ -1,4 +1,4 @@
-# Install script for directory: C:/Espressif/frameworks/esp-idf-v5.5.1-2/components/esp_driver_parlio
+# Install script for directory: C:/Users/Radek/esp/v5.5.1/esp-idf/components/esp_driver_parlio
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
