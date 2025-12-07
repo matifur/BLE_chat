@@ -230,3 +230,7 @@ typedef struct {
 - Wyświetla prostą zachętę `> `.
 - Można wołać przed kolejnym `chat_io_read_line()` (tak jak w przykładowym `main.c`).
 
+  ### 7. Synchronizacja Czasu (NTP przez Wi-Fi)
+  
+-Projekt został rozbudowany o obsługę Wi-Fi oraz protokołu NTP. 
+-Dzięki temu płytka ESP32-C3 po uruchomieniu łączy się z siecią, pobiera aktualny czas UTC z wybranego serwera NTP.
