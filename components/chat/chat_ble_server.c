@@ -1,7 +1,7 @@
 #include "chat_ble_common.h"
 #include "chat_ble.h"
 #include "chat.h"
-
+#include "ntp.h"
 #include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -29,23 +29,6 @@ static esp_ble_adv_params_t s_adv_params = {
     .channel_map       = ADV_CHNL_ALL,
     .adv_filter_policy = ADV_FILTER_ALLOW_SCAN_ANY_CON_ANY,
 };
-
-// Optional: advertise our 16-bit service UUID in "complete list"
-// static esp_ble_adv_data_t s_adv_data = {
-//     .set_scan_rsp        = false,
-//     .include_name        = true,
-//     .include_txpower     = true,
-//     .min_interval        = 0,
-//     .max_interval        = 0,
-//     .appearance          = 0,
-//     .manufacturer_len    = 0,
-//     .p_manufacturer_data = NULL,
-//     .service_data_len    = 0,
-//     .p_service_data      = NULL,
-//     .service_uuid_len    = 2,  // one 16-bit UUID
-//     .p_service_uuid      = NULL, // set later
-//     .flag                = (ESP_BLE_ADV_FLAG_GEN_DISC | ESP_BLE_ADV_FLAG_BREDR_NOT_SPT),
-// };
 
 // Optional: advertise with device name (no UUID here)
 static esp_ble_adv_data_t s_adv_data = {
@@ -83,14 +66,41 @@ static void chat_ble_print_remote(const char *text)
 {
     if (!text) return;
 
+    // Expected incoming format: "HH:MM:SS|MESSAGE"
+    char sender_ts[16] = "--------";
+    char msg_text[CHAT_BLE_MAX_PACKET_LEN];
+
+    const char *sep = strchr(text, '|');
+    if (sep != NULL) {
+        // Extract sender timestamp
+        size_t ts_len = sep - text;
+        if (ts_len < sizeof(sender_ts)) {
+            memcpy(sender_ts, text, ts_len);
+            sender_ts[ts_len] = '\0';
+        }
+
+        // Extract the remaining message
+        strncpy(msg_text, sep + 1, sizeof(msg_text));
+        msg_text[sizeof(msg_text) - 1] = '\0';
+    } else {
+        // No timestamp provided - old format fallback
+        strncpy(msg_text, text, sizeof(msg_text));
+        msg_text[sizeof(msg_text) - 1] = '\0';
+    }
+
+    // Receiver-side timestamp (local)
+    const char *local_ts = ntp_get_timestr();
+
     chat_message_t msg = {
         .direction = CHAT_DIR_REMOTE,
-        .sender    = "REMOTE",
-        .timestamp = NULL,
-        .text      = text,
+        .sender    = sender_ts,
+        .timestamp = local_ts,  // receiver timestamp
+        .text      = msg_text,
     };
+
     chat_io_print_message(&msg);
 }
+
 
 /**
  * Send text from SERVER to CLIENT using notification
@@ -277,6 +287,7 @@ static void gatts_server_cb(esp_gatts_cb_event_t event,
         ESP_LOGI(TAG, "Client connected, conn_id=%d", param->connect.conn_id);
         s_connected = true;
         s_conn_id   = param->connect.conn_id;
+        esp_ble_gatt_set_local_mtu(517);
         break;
 
     case ESP_GATTS_DISCONNECT_EVT:

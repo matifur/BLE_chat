@@ -52,10 +52,13 @@ void app_main(void)
 
             // Print message (function will now append local timestamp)
             chat_io_print_message(&local);
+            
+            // Build payload: TIMESTAMP|MESSAGE
+            char payload[160];
+            snprintf(payload, sizeof(payload), "%s|%s", ts_sender, line);
 
-            // Send raw text over BLE (receiver will add their own local timestamp)
             if (chat_ble_is_connected()) {
-                chat_ble_send(line);
+                chat_ble_send(payload);
             } else {
                 ESP_LOGW(TAG, "Not connected – cannot send!");
             }

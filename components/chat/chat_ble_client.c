@@ -1,7 +1,7 @@
 #include "chat_ble_common.h"
 #include "chat_ble.h"
 #include "chat.h"
-
+#include "ntp.h"
 #include <string.h>
 #include "esp_log.h"
 #include "esp_gap_ble_api.h"
@@ -40,14 +40,43 @@ bool chat_ble_client_is_connected(void)
 
 static void chat_ble_print_remote(const char *text)
 {
+    if (!text) return;
+
+    // Expected incoming format: "HH:MM:SS|MESSAGE"
+    char sender_ts[16] = "--------";
+    char msg_text[CHAT_BLE_MAX_PACKET_LEN];
+
+    const char *sep = strchr(text, '|');
+    if (sep != NULL) {
+        // Extract sender timestamp
+        size_t ts_len = sep - text;
+        if (ts_len < sizeof(sender_ts)) {
+            memcpy(sender_ts, text, ts_len);
+            sender_ts[ts_len] = '\0';
+        }
+
+        // Extract the remaining message
+        strncpy(msg_text, sep + 1, sizeof(msg_text));
+        msg_text[sizeof(msg_text) - 1] = '\0';
+    } else {
+        // No timestamp provided - old format fallback
+        strncpy(msg_text, text, sizeof(msg_text));
+        msg_text[sizeof(msg_text) - 1] = '\0';
+    }
+
+    // Receiver-side timestamp (local)
+    const char *local_ts = ntp_get_timestr();
+
     chat_message_t msg = {
         .direction = CHAT_DIR_REMOTE,
-        .sender    = "REMOTE",
-        .timestamp = NULL,
-        .text      = text,
+        .sender    = sender_ts,
+        .timestamp = local_ts,  // receiver timestamp
+        .text      = msg_text,
     };
+
     chat_io_print_message(&msg);
 }
+
 
 // ============================================================================
 // SEND MESSAGE: client → server (WRITE to RX characteristic)
@@ -191,22 +220,31 @@ static void gattc_cb(esp_gattc_cb_event_t event,
         esp_ble_gattc_open(gattc_if, s_peer_addr, BLE_ADDR_TYPE_PUBLIC, true);
         break;
 
+    case ESP_GATTC_CFG_MTU_EVT:
+        ESP_LOGI(TAG, "MTU updated to %d", param->cfg_mtu.mtu);
+
+        // Now safe to start service discovery
+        esp_bt_uuid_t service_uuid = chat_uuid16(CHAT_SERVICE_UUID);
+        esp_ble_gattc_search_service(
+            gattc_if,
+            param->cfg_mtu.conn_id,   // <-- important fix
+            &service_uuid
+        );
+        break;
+
+
     case ESP_GATTC_OPEN_EVT:
         if (param->open.status == ESP_GATT_OK) {
             ESP_LOGI(TAG, "Connected to server");
             s_connected = true;
             s_conn_id   = param->open.conn_id;
-            esp_bt_uuid_t service_uuid = chat_uuid16(CHAT_SERVICE_UUID);
 
-            esp_ble_gattc_search_service(
-                gattc_if,
-                s_conn_id,
-                &service_uuid
-            );
-        } else {
-            ESP_LOGE(TAG, "Connection failed, status=%d", param->open.status);
+            // Step 1: request MTU
+            esp_ble_gattc_send_mtu_req(gattc_if, s_conn_id);
+            // DO NOT start service discovery here anymore
         }
         break;
+
 
         case ESP_GATTC_REG_FOR_NOTIFY_EVT: {
         if (param->reg_for_notify.status != ESP_GATT_OK) {
