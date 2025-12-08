@@ -20,7 +20,8 @@ static uint16_t      s_char_tx_handle = 0;   // we notify here
 static uint16_t      s_conn_id        = 0;
 static bool          s_connected      = false;
 
-// Simple advertising params
+// Simple advertising params, Server must advertise for client to see it, we do not advertise UUID of service, it is known
+// from dynamic logic, we send packets with name = "ESP32_CHAT"
 static esp_ble_adv_params_t s_adv_params = {
     .adv_int_min       = 0x20,
     .adv_int_max       = 0x40,
@@ -34,7 +35,7 @@ static esp_ble_adv_params_t s_adv_params = {
 static esp_ble_adv_data_t s_adv_data = {
     .set_scan_rsp        = false,
     .include_name        = true,   // we will set name to "ESP32_CHAT"
-    .include_txpower     = false,  // keep it simple
+    .include_txpower     = false,  
     .min_interval        = 0x20,
     .max_interval        = 0x40,
     .appearance          = 0,
@@ -46,9 +47,6 @@ static esp_ble_adv_data_t s_adv_data = {
     .p_service_uuid      = NULL,   // <-- NULL pointer
     .flag                = (ESP_BLE_ADV_FLAG_GEN_DISC | ESP_BLE_ADV_FLAG_BREDR_NOT_SPT),
 };
-
-
-//static uint8_t s_service_uuid_buf[2]; // holds 16-bit UUID in LE for adv
 
 // Forward declarations
 static void gap_server_cb(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *param);
@@ -62,6 +60,7 @@ bool chat_ble_server_is_connected(void)
     return s_connected;
 }
 
+// Receiving message from client
 static void chat_ble_print_remote(const char *text)
 {
     if (!text) return;
@@ -102,10 +101,7 @@ static void chat_ble_print_remote(const char *text)
 }
 
 
-/**
- * Send text from SERVER to CLIENT using notification
- * (TX characteristic).
- */
+// Sending message from server to client, we use notification without confirmation (last parameter is set to false)
 esp_err_t chat_ble_server_send(const char *text)
 {
     if (!text) {

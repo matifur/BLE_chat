@@ -29,15 +29,14 @@ static uint16_t s_tx_ccc_handle      = 0;   // descriptor to enable notification
 
 static esp_bd_addr_t s_peer_addr     = {0};
 
-// ============================================================================
 // HELPERS
-// ============================================================================
-
+// Even if client knows adress of server, it cannot send anything without stack confirming connection
 bool chat_ble_client_is_connected(void)
 {
     return s_connected;
 }
 
+// Receives text from server and parses it, receiving from notify TX
 static void chat_ble_print_remote(const char *text)
 {
     if (!text) return;
@@ -77,11 +76,7 @@ static void chat_ble_print_remote(const char *text)
     chat_io_print_message(&msg);
 }
 
-
-// ============================================================================
 // SEND MESSAGE: client → server (WRITE to RX characteristic)
-// ============================================================================
-
 esp_err_t chat_ble_client_send(const char *text)
 {
     if (!text) return ESP_ERR_INVALID_ARG;
@@ -91,6 +86,7 @@ esp_err_t chat_ble_client_send(const char *text)
     if (len > CHAT_BLE_MAX_PACKET_LEN)
         len = CHAT_BLE_MAX_PACKET_LEN;
 
+    // GATT Write Without Response
     esp_err_t err = esp_ble_gattc_write_char(
         s_gattc_if,
         s_conn_id,
@@ -107,10 +103,7 @@ esp_err_t chat_ble_client_send(const char *text)
     return err;
 }
 
-// ============================================================================
-// ENABLE TX NOTIFICATIONS
-// ============================================================================
-
+// ENABLE TX NOTIFICATIONS, by default it is off, you have to enable it to receive messages from this characteristics
 static void enable_tx_notifications(void)
 {
     if (s_tx_ccc_handle == 0) {
@@ -136,10 +129,7 @@ static void enable_tx_notifications(void)
         ESP_LOGI(TAG, "Notifications enabled");
 }
 
-// ============================================================================
-// DISCOVERY HELPERS: Find characteristics and descriptor
-// ============================================================================
-
+// DISCOVERY HELPERS: Find characteristics and descriptor, we look for TX, RX characteristics and remember handle
 static void discover_characteristics(void)
 {
     esp_bt_uuid_t rx_uuid = chat_uuid16(CHAT_CHAR_RX_UUID);
@@ -202,11 +192,7 @@ static void discover_characteristics(void)
     }
 }
 
-
-// ============================================================================
 // GATTC CALLBACK
-// ============================================================================
-
 static void gattc_cb(esp_gattc_cb_event_t event,
                      esp_gatt_if_t gattc_if,
                      esp_ble_gattc_cb_param_t *param)
