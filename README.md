@@ -232,5 +232,19 @@ typedef struct {
 
   ### 7. Synchronizacja Czasu (NTP przez Wi-Fi)
   
--Projekt został rozbudowany o obsługę Wi-Fi oraz protokołu NTP. 
--Dzięki temu płytka ESP32-C3 po uruchomieniu łączy się z siecią, pobiera aktualny czas UTC z wybranego serwera NTP.
+ - Projekt został rozbudowany o obsługę Wi-Fi oraz protokołu NTP. 
+ - Dzięki temu płytka ESP32-C3 po uruchomieniu łączy się z siecią, pobiera aktualny czas UTC z   wybranego serwera NTP.
+ #### 7.1. Konfiguracja Wi-Fi
+Aby synchronizacja czasu zadziałała, musisz podać nazwę sieci (SSID) i hasło w konfiguracji projektu.
+Dane te należy edytować w pliku `wifi.c` zgodnie z siecią z którą chcemy się połączyć
+```
+#define WIFI_SSID "NTP"
+#define WIFI_PASS "12345678"
+```
+#### 7.2. Podstawowe funkcje Wi-Fi
+- `esp_netif_init()` Inicjuje warstwę sieciową ESP-IDF.
+- `esp_event_loop_create_default()` 
+
+#### 7.3. POdstawowe funkcje NTP
+- `sntp_init()` - Startuje moduł NTP → zaczyna pobierać czas.
+- `sntp_stop()` - Zatrzymuje NTP 
