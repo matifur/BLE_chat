@@ -133,34 +133,32 @@ esp_err_t chat_ble_server_send(const char *text)
     return err;
 }
 
-/**
- * Initialize BLE server: service + characteristics + advertising.
- * Called from chat_ble_init() AFTER controller/bluedroid are ready.
- */
+// Initialize BLE server: service + characteristics + advertising.
+// Called from chat_ble_init() AFTER controller/bluedroid are ready.
 esp_err_t chat_ble_server_init(void)
 {
     ESP_LOGI(TAG, "Initializing CHAT BLE server...");
 
     // Register our GAP and GATTS callbacks
-    ESP_ERROR_CHECK(esp_ble_gap_register_callback(gap_server_cb));
-    ESP_ERROR_CHECK(esp_ble_gatts_register_callback(gatts_server_cb));
+    ESP_ERROR_CHECK(esp_ble_gap_register_callback(gap_server_cb));  // advertising
+    ESP_ERROR_CHECK(esp_ble_gatts_register_callback(gatts_server_cb));  // services, characteristics
     ESP_ERROR_CHECK(esp_ble_gatts_app_register(0x55));  // arbitrary app_id
 
     return ESP_OK;
 }
 
-/* ============================================================
- *  GAP CALLBACK – advertising handling
- * ============================================================ */
-
+// GAP CALLBACK – advertising handling
 static void gap_server_cb(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *param)
 {
     switch (event) {
+
+    // Data for advertising set, we can advertise 
     case ESP_GAP_BLE_ADV_DATA_SET_COMPLETE_EVT:
         ESP_LOGI(TAG, "Adv data set, starting advertising");
         esp_ble_gap_start_advertising(&s_adv_params);
         break;
 
+    // Advertising started
     case ESP_GAP_BLE_ADV_START_COMPLETE_EVT:
         if (param->adv_start_cmpl.status == ESP_BT_STATUS_SUCCESS) {
             ESP_LOGI(TAG, "Advertising started");
@@ -169,6 +167,7 @@ static void gap_server_cb(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *
         }
         break;
 
+    // Stopping advertising
     case ESP_GAP_BLE_ADV_STOP_COMPLETE_EVT:
         ESP_LOGI(TAG, "Advertising stopped");
         break;
@@ -177,17 +176,14 @@ static void gap_server_cb(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t *
         break;
     }
 }
-
-/* ============================================================
- *  GATTS CALLBACK – service, chars, connection, writes
- * ============================================================ */
-
+// GATTS CALLBACK – service, chars, connection, writes
 static void gatts_server_cb(esp_gatts_cb_event_t event,
                             esp_gatt_if_t gatts_if,
                             esp_ble_gatts_cb_param_t *param)
 {
     switch (event) {
 
+    // Setting name of device to ESP32_CHAT, creating service
     case ESP_GATTS_REG_EVT: {
         ESP_LOGI(TAG, "GATTS_REG_EVT, app_id=%d", param->reg.app_id);
         s_gatts_if = gatts_if;
@@ -196,6 +192,7 @@ static void gatts_server_cb(esp_gatts_cb_event_t event,
         const char dev_name[] = "ESP32_CHAT";
         esp_ble_gap_set_device_name(dev_name);
 
+        // Payload
         esp_err_t err = esp_ble_gap_config_adv_data(&s_adv_data);
         if (err != ESP_OK) {
             ESP_LOGE(TAG, "config_adv_data failed: %s", esp_err_to_name(err));
@@ -214,6 +211,7 @@ static void gatts_server_cb(esp_gatts_cb_event_t event,
         break;
     }
 
+    // Starting service and adding RX characteristics, client can write only to this address
     case ESP_GATTS_CREATE_EVT: {
         ESP_LOGI(TAG, "Service created, handle=%d", param->create.service_handle);
         s_service_handle = param->create.service_handle;
@@ -245,6 +243,7 @@ static void gatts_server_cb(esp_gatts_cb_event_t event,
         break;
     }
 
+    // If characteristics for RX exists then add characteristics for TX
     case ESP_GATTS_ADD_CHAR_EVT: {
         uint16_t uuid16 = param->add_char.char_uuid.uuid.uuid16;
         if (uuid16 == CHAT_CHAR_RX_UUID) {
@@ -279,6 +278,7 @@ static void gatts_server_cb(esp_gatts_cb_event_t event,
         break;
     }
 
+    // Client connected, store ID of connection, setting MTU, 
     case ESP_GATTS_CONNECT_EVT:
         ESP_LOGI(TAG, "Client connected, conn_id=%d", param->connect.conn_id);
         s_connected = true;
@@ -286,6 +286,7 @@ static void gatts_server_cb(esp_gatts_cb_event_t event,
         esp_ble_gatt_set_local_mtu(517);
         break;
 
+    // Client disconnected, back to advertising
     case ESP_GATTS_DISCONNECT_EVT:
         ESP_LOGI(TAG, "Client disconnected");
         s_connected = false;
@@ -295,6 +296,7 @@ static void gatts_server_cb(esp_gatts_cb_event_t event,
         esp_ble_gap_start_advertising(&s_adv_params);
         break;
 
+    // Client wrote a message, receiving this message, logging it and forwarding to UI
     case ESP_GATTS_WRITE_EVT:
         if (param->write.handle == s_char_rx_handle && param->write.len > 0) {
             // Client wrote to RX characteristic -> incoming chat message

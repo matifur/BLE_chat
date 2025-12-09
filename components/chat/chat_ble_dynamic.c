@@ -9,10 +9,7 @@
 #include "esp_bt_main.h"
 #include "esp_gap_ble_api.h"
 
-// =============================================================
 // Forward declarations from server/client modules
-// =============================================================
-
 esp_err_t chat_ble_server_init(void);
 esp_err_t chat_ble_client_init(const esp_bd_addr_t peer_addr);
 
@@ -22,18 +19,12 @@ esp_err_t chat_ble_client_send(const char *text);
 bool chat_ble_server_is_connected(void);
 bool chat_ble_client_is_connected(void);
 
-// =============================================================
 // Internal state
-// =============================================================
-
 static chat_ble_role_t s_role = CHAT_ROLE_UNDECIDED;
 static esp_bd_addr_t s_server_addr = {0};   // used if we become client
 static bool s_found_server = false;
 
-// =============================================================
 // Minimal advertising parser to detect CHAT name "ESP32_CHAT"
-// =============================================================
-
 // Look for complete local name "ESP32_CHAT" in advertisement
 static bool adv_contains_chat_name(const uint8_t *adv, uint8_t len)
 {
@@ -62,15 +53,13 @@ static bool adv_contains_chat_name(const uint8_t *adv, uint8_t len)
     return false;
 }
 
-// =============================================================
 // Temporary GAP callback used during scanning phase
-// =============================================================
-
 static void gap_temp_scan_handler(esp_gap_ble_cb_event_t event,
                                   esp_ble_gap_cb_param_t *param)
 {
     switch (event) {
-
+    
+    // scanning for 5s
     case ESP_GAP_BLE_SCAN_PARAM_SET_COMPLETE_EVT: {
         // Scan params are set → now we can start scanning.
         esp_err_t status = param->scan_param_cmpl.status;
@@ -88,9 +77,11 @@ static void gap_temp_scan_handler(esp_gap_ble_cb_event_t event,
         break;
     }
 
+    // Looking for advertising packet
     case ESP_GAP_BLE_SCAN_RESULT_EVT: {
         const esp_ble_gap_cb_param_t *r = param;
         switch (r->scan_rst.search_evt) {
+
         case ESP_GAP_SEARCH_INQ_RES_EVT:
             // Got an advertising packet
             if (adv_contains_chat_name(r->scan_rst.ble_adv,
@@ -126,17 +117,12 @@ static void gap_temp_scan_handler(esp_gap_ble_cb_event_t event,
     }
 }
 
-// =============================================================
 // chat_ble_init(): dynamic role selection
-// =============================================================
-
 esp_err_t chat_ble_init(void)
 {
     esp_err_t ret;
 
-    // ---------------------------------------------------------
     // 1. Init BLE controller + Bluedroid
-    // ---------------------------------------------------------
     esp_bt_controller_config_t bt_cfg = BT_CONTROLLER_INIT_CONFIG_DEFAULT();
 
     ret = esp_bt_controller_init(&bt_cfg);
@@ -173,14 +159,12 @@ esp_err_t chat_ble_init(void)
     uint32_t delay_ms = (esp_random() % 400) + 100;  // 100–500 ms
     vTaskDelay(pdMS_TO_TICKS(delay_ms));
 
-    // ---------------------------------------------------------
     // 2. Prepare to SCAN for an existing server
-    // ---------------------------------------------------------
     s_found_server = false;
     s_role = CHAT_ROLE_UNDECIDED;
     memset(s_server_addr, 0, sizeof(s_server_addr));
 
-    // Register temporary GAP callback for scanning
+    // Register temporary GAP callback for scanning, will be replaced by callback of server or client
     ret = esp_ble_gap_register_callback(gap_temp_scan_handler);
     if (ret != ESP_OK) {
         ESP_LOGE(CHAT_BLE_TAG, "gap register failed: %s", esp_err_to_name(ret));
@@ -199,15 +183,13 @@ esp_err_t chat_ble_init(void)
     ESP_LOGI(CHAT_BLE_TAG,
              "Setting scan params, then scanning for CHAT service...");
 
-    // This triggers ESP_GAP_BLE_SCAN_PARAM_SET_COMPLETE_EVT,
-    // where we actually start scanning.
+    // This triggers ESP_GAP_BLE_SCAN_PARAM_SET_COMPLETE_EVT from switch case event,
+    // where we actually start scanning for 5 sec.
     ESP_ERROR_CHECK(esp_ble_gap_set_scan_params(&scan_params));
 
-    // ---------------------------------------------------------
     // 3. Wait until:
     //    - we find a server (s_found_server == true), or
     //    - scan timeout passes (safety net)
-    // ---------------------------------------------------------
     TickType_t t_start       = xTaskGetTickCount();
     TickType_t timeout_ticks = pdMS_TO_TICKS(CHAT_ROLE_SCAN_TIMEOUT_MS + 500);
 
@@ -216,9 +198,7 @@ esp_err_t chat_ble_init(void)
         vTaskDelay(pdMS_TO_TICKS(50));
     }
 
-    // ---------------------------------------------------------
     // 4. Decide role based on scan result
-    // ---------------------------------------------------------
     if (s_found_server) {
         // We found a server => become CLIENT
         s_role = CHAT_ROLE_CLIENT;
@@ -246,10 +226,7 @@ esp_err_t chat_ble_init(void)
     }
 }
 
-// =============================================================
 // Public API: delegate to server or client implementation
-// =============================================================
-
 esp_err_t chat_ble_send(const char *text)
 {
     if (s_role == CHAT_ROLE_SERVER)

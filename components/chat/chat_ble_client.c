@@ -192,13 +192,14 @@ static void discover_characteristics(void)
     }
 }
 
-// GATTC CALLBACK
+// GATTC CALLBACK, handles all BLE events
 static void gattc_cb(esp_gattc_cb_event_t event,
                      esp_gatt_if_t gattc_if,
                      esp_ble_gattc_cb_param_t *param)
 {
     switch (event) {
 
+    // Client registered, we can establish connection with server
     case ESP_GATTC_REG_EVT:
         ESP_LOGI(TAG, "Client registered");
         s_gattc_if = gattc_if;
@@ -206,6 +207,7 @@ static void gattc_cb(esp_gattc_cb_event_t event,
         esp_ble_gattc_open(gattc_if, s_peer_addr, BLE_ADDR_TYPE_PUBLIC, true);
         break;
 
+    // MTU changed, we can begin service
     case ESP_GATTC_CFG_MTU_EVT:
         ESP_LOGI(TAG, "MTU updated to %d", param->cfg_mtu.mtu);
 
@@ -213,12 +215,12 @@ static void gattc_cb(esp_gattc_cb_event_t event,
         esp_bt_uuid_t service_uuid = chat_uuid16(CHAT_SERVICE_UUID);
         esp_ble_gattc_search_service(
             gattc_if,
-            param->cfg_mtu.conn_id,   // <-- important fix
+            param->cfg_mtu.conn_id, 
             &service_uuid
         );
         break;
 
-
+    // Connection established, request for bigger MTU, packets
     case ESP_GATTC_OPEN_EVT:
         if (param->open.status == ESP_GATT_OK) {
             ESP_LOGI(TAG, "Connected to server");
@@ -231,8 +233,8 @@ static void gattc_cb(esp_gattc_cb_event_t event,
         }
         break;
 
-
-        case ESP_GATTC_REG_FOR_NOTIFY_EVT: {
+    // Descriptor found, turn on notifications
+    case ESP_GATTC_REG_FOR_NOTIFY_EVT: {
         if (param->reg_for_notify.status != ESP_GATT_OK) {
             ESP_LOGE(TAG, "REG_FOR_NOTIFY failed, status=%d",
                      param->reg_for_notify.status);
@@ -273,6 +275,7 @@ static void gattc_cb(esp_gattc_cb_event_t event,
         break;
     }
 
+    // Found service, storing its characteristics, CHAT_SERVICE_UUID
     case ESP_GATTC_SEARCH_RES_EVT:
         if (param->search_res.srvc_id.uuid.uuid.uuid16 == CHAT_SERVICE_UUID) {
             s_service_start = param->search_res.start_handle;
@@ -282,6 +285,7 @@ static void gattc_cb(esp_gattc_cb_event_t event,
         }
         break;
 
+    // Finished looking for service, now looking for characteristics
     case ESP_GATTC_SEARCH_CMPL_EVT:
         if (s_service_start != 0 && s_service_end != 0) {
             ESP_LOGI(TAG, "Service discovery complete, discovering chars…");
@@ -289,6 +293,7 @@ static void gattc_cb(esp_gattc_cb_event_t event,
         }
         break;
 
+    // Event for sending message to server
     case ESP_GATTC_NOTIFY_EVT: {
         size_t len = param->notify.value_len;
 
@@ -303,7 +308,8 @@ static void gattc_cb(esp_gattc_cb_event_t event,
         chat_ble_print_remote(buf);
         break;
     }
-
+    
+    // Connection to BLE lost
     case ESP_GATTC_DISCONNECT_EVT:
         ESP_LOGW(TAG, "Disconnected from server");
         s_connected = false;
@@ -314,20 +320,14 @@ static void gattc_cb(esp_gattc_cb_event_t event,
     }
 }
 
-// ============================================================================
 // GAP CALLBACK (minimal for client)
-// ============================================================================
-
 static void gap_client_cb(esp_gap_ble_cb_event_t event,
                           esp_ble_gap_cb_param_t *param)
 {
     // client does not need much here
 }
 
-// ============================================================================
-// INIT ENTRY POINT (called from dynamic logic)
-// ============================================================================
-
+// INIT ENTRY POINT (called from dynamic logic), initializing client
 esp_err_t chat_ble_client_init(const esp_bd_addr_t peer_addr)
 {
     ESP_LOGI(TAG, "Initializing CHAT BLE client…");
