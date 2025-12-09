@@ -19,6 +19,9 @@ esp_err_t chat_ble_client_send(const char *text);
 bool chat_ble_server_is_connected(void);
 bool chat_ble_client_is_connected(void);
 
+esp_err_t chat_ble_server_ping(void);
+esp_err_t chat_ble_client_ping(void);
+
 // Internal state
 static chat_ble_role_t s_role = CHAT_ROLE_UNDECIDED;
 static esp_bd_addr_t s_server_addr = {0};   // used if we become client
@@ -235,6 +238,17 @@ esp_err_t chat_ble_send(const char *text)
         return chat_ble_client_send(text);
     else
         return ESP_ERR_INVALID_STATE;
+}
+
+esp_err_t chat_ble_ping(void)
+{
+    if (s_role == CHAT_ROLE_SERVER) {
+        return chat_ble_server_ping();
+    } else if (s_role == CHAT_ROLE_CLIENT) {
+        return chat_ble_client_ping();
+    } else {
+        return ESP_ERR_INVALID_STATE;
+    }
 }
 
 bool chat_ble_is_connected(void)

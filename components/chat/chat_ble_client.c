@@ -20,6 +20,14 @@ static esp_gatt_if_t s_gattc_if      = ESP_GATT_IF_NONE;
 static uint16_t      s_conn_id       = 0;
 static bool          s_connected     = false;
 
+// Ping measurement state
+static TickType_t s_ping_start_ticks = 0;
+static bool       s_ping_in_flight   = false;
+
+// Forward declaration of internal send function
+esp_err_t chat_ble_client_send(const char *text);
+
+
 static uint16_t s_service_start      = 0;
 static uint16_t s_service_end        = 0;
 
@@ -63,6 +71,40 @@ static void chat_ble_print_remote(const char *text)
         msg_text[sizeof(msg_text) - 1] = '\0';
     }
 
+        // Check for special PING/PONG control messages
+    bool is_ping = (strcmp(msg_text, "__PING__") == 0);
+    bool is_pong = (strcmp(msg_text, "__PONG__") == 0);
+
+    if (is_ping) {
+        // Auto-reply with PONG
+        const char *reply_ts = ntp_get_timestr();
+        char payload[32];
+        snprintf(payload, sizeof(payload), "%s|__PONG__", reply_ts);
+        (void)chat_ble_client_send(payload);
+    }
+
+    if (is_pong && s_ping_in_flight) {
+        // Compute RTT using local tick counter
+        TickType_t now        = xTaskGetTickCount();
+        TickType_t diff_ticks = now - s_ping_start_ticks;
+        s_ping_in_flight      = false;
+
+        uint32_t diff_ms = diff_ticks * portTICK_PERIOD_MS;
+
+        char info_text[64];
+        snprintf(info_text, sizeof(info_text),
+                 "Ping RTT: %u ms", (unsigned)diff_ms);
+
+        const char *ts = ntp_get_timestr();
+        chat_message_t info = {
+            .direction = CHAT_DIR_LOCAL,
+            .sender    = "PING",
+            .timestamp = ts,
+            .text      = info_text,
+        };
+        chat_io_print_message(&info);
+    }
+
     // Receiver-side timestamp (local)
     const char *local_ts = ntp_get_timestr();
 
@@ -102,6 +144,23 @@ esp_err_t chat_ble_client_send(const char *text)
 
     return err;
 }
+
+esp_err_t chat_ble_client_ping(void)
+{
+    if (!s_connected || s_rx_handle == 0) {
+        return ESP_ERR_INVALID_STATE;
+    }
+
+    const char *ts = ntp_get_timestr();
+    char payload[32];
+    snprintf(payload, sizeof(payload), "%s|__PING__", ts);
+
+    s_ping_start_ticks = xTaskGetTickCount();
+    s_ping_in_flight   = true;
+
+    return chat_ble_client_send(payload);
+}
+
 
 // ENABLE TX NOTIFICATIONS, by default it is off, you have to enable it to receive messages from this characteristics
 static void enable_tx_notifications(void)

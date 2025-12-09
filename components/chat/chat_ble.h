@@ -28,6 +28,12 @@ esp_err_t chat_ble_init(void);
 esp_err_t chat_ble_send(const char *text);
 
 /**
+ * Start a PING/PONG RTT measurement over BLE.
+ * Wysyła specjalną wiadomość "__PING__".
+ */
+esp_err_t chat_ble_ping(void);
+
+/**
  * Return true if there is an active BLE connection with the peer.
  */
 bool chat_ble_is_connected(void);

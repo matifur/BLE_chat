@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_log.h"
@@ -9,6 +10,8 @@
 #include "chat_ble.h"
 #include "wifi.h"
 #include "ntp.h"
+#include "chat_cmd.h"
+
 
 static const char *TAG = "main";
 
@@ -39,21 +42,26 @@ void app_main(void)
         esp_err_t err = chat_io_read_line(line, sizeof(line), portMAX_DELAY);
         if (err == ESP_OK) {
 
+            // Najpierw spróbuj obsłużyć linię jako komendę
+            if (chat_cmd_handle_line(line)) {
+                // komenda została obsłużona w całości
+                // nie wysyłamy jej po BLE
+                continue;
+            }
+
+            // A jeśli to nie komenda, to idziemy starą ścieżką:
             // Get sender timestamp (from NTP)
             const char* ts_sender = ntp_get_timestr();
 
-            // Create message structure
             chat_message_t local = {
                 .direction = CHAT_DIR_LOCAL,
                 .sender    = "YOU",
-                .timestamp = ts_sender,  // store sender timestamp here
+                .timestamp = ts_sender,
                 .text      = line,
             };
 
-            // Print message (function will now append local timestamp)
             chat_io_print_message(&local);
-            
-            // Build payload: TIMESTAMP|MESSAGE
+
             char payload[160];
             snprintf(payload, sizeof(payload), "%s|%s", ts_sender, line);
 
@@ -62,6 +70,7 @@ void app_main(void)
             } else {
                 ESP_LOGW(TAG, "Not connected – cannot send!");
             }
+
 
         } else if (err == ESP_ERR_TIMEOUT) {
             continue;

@@ -5,8 +5,8 @@
 #include "nvs_flash.h"
 #include "esp_netif.h"
 
-#define WIFI_SSID "NTP"
-#define WIFI_PASS "12345678"
+#define WIFI_SSID "S21"
+#define WIFI_PASS "jcau1053"
 
 static const char *TAG = "wifi";
 
