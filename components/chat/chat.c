@@ -8,6 +8,8 @@
 
 static const char *TAG = "chat_io";
 
+// Niskopoziomowy zapis surowych danych na interfejs USB Serial/JTAG.
+// Funkcja blokuje się, dopóki wszystkie bajty nie trafią do bufora TX.
 static void chat_io_write_raw(const void *data, size_t len)
 {
     if (!data || len == 0) {
@@ -17,6 +19,9 @@ static void chat_io_write_raw(const void *data, size_t len)
     usb_serial_jtag_write_bytes(data, len, portMAX_DELAY);
 }
 
+// Inicjalizacja warstwy IO czatu.
+// Konfiguruje i instaluje sterownik USB Serial/JTAG.
+// Jeśli sterownik był już zainstalowany, zwraca ESP_OK i loguje ostrzeżenie.
 esp_err_t chat_io_init(void)
 {
     usb_serial_jtag_driver_config_t cfg = USB_SERIAL_JTAG_DRIVER_CONFIG_DEFAULT();
@@ -34,6 +39,13 @@ esp_err_t chat_io_init(void)
     return ESP_OK;
 }
 
+// Czyta jedną linię tekstu z terminala (PuTTY).
+// Obsługuje:
+//  - globalny timeout,
+//  - backspace/DEL,
+//  - zakończenie linii CR/LF,
+//  - bezpieczne ograniczenie długości bufora.
+// Zwraca ESP_OK, ESP_ERR_TIMEOUT lub kod błędu z warstwy USB.
 esp_err_t chat_io_read_line(char *buf, size_t buf_len, TickType_t timeout)
 {
     if (!buf || buf_len < 2) {
@@ -102,6 +114,10 @@ esp_err_t chat_io_read_line(char *buf, size_t buf_len, TickType_t timeout)
     return ESP_OK;
 }
 
+// Wyświetla wiadomość czatu w spójnym formacie:
+// [IN ][HH:MM:SS][NODE_A ]: treść
+// [OUT][HH:MM:SS][YOU    ]: treść
+// W razie braku timestampu/nadawcy używa wartości domyślnych.
 void chat_io_print_message(const chat_message_t *msg)
 {
     if (!msg || !msg->text) {
@@ -126,6 +142,7 @@ void chat_io_print_message(const chat_message_t *msg)
     chat_io_write_raw(line, (size_t)len);
 }
 
+// Wypisuje prosty prompt "> " na terminalu.
 void chat_io_print_prompt(void)
 {
     const char prompt[] = "> ";
